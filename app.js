@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const fs = require('fs');
 const path = require('path');
 
@@ -84,7 +86,7 @@ app.delete('/goals/:id', async (req, res) => {
 });
 
 mongoose.connect(
-  'mongodb://localhost:27017/course-goals',
+  `mongodb://${process.env.DB_CONNECT}/course-golas` ,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
